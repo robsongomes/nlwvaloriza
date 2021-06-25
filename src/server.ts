@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import express, { Request, Response, NextFunction } from "express"; 
 import "express-async-errors";
+import cors from "cors"
 
 import { router } from "./routes";
 
@@ -9,6 +10,8 @@ import "./database"
 const PORT = process.env.PORT || 3001
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
